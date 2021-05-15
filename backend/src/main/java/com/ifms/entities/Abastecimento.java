@@ -28,7 +28,6 @@ public class  Abastecimento implements Serializable {
 	
 	
 	private String quilometragem;
-	private String telefone;
 	private Integer quantidadeEmlitros;
 	private Double  valorPorLitro;
 	
@@ -53,13 +52,13 @@ public class  Abastecimento implements Serializable {
 
 
 
-public Abastecimento(Long id, String dataDoAbastecimento, String quilometragem, String telefone,
+public Abastecimento(Long id, String dataDoAbastecimento, String quilometragem,
 		Integer quantidadeEmlitros, Double valorPorLitro, String cpfMotorista, Combustivel combustivel) {
 	super();
 	this.id = id;
 	this.dataDoAbastecimento = dataDoAbastecimento;
 	this.quilometragem = quilometragem;
-	this.telefone = telefone;
+
 	this.quantidadeEmlitros = quantidadeEmlitros;
 	this.valorPorLitro = valorPorLitro;
 	this.cpfMotorista = cpfMotorista;
@@ -104,15 +103,6 @@ public void setQuilometragem(String quilometragem) {
 
 
 
-public String getTelefone() {
-	return telefone;
-}
-
-
-
-public void setTelefone(String telefone) {
-	this.telefone = telefone;
-}
 
 
 
@@ -174,7 +164,7 @@ public int hashCode() {
 	result = prime * result + ((id == null) ? 0 : id.hashCode());
 	result = prime * result + ((quantidadeEmlitros == null) ? 0 : quantidadeEmlitros.hashCode());
 	result = prime * result + ((quilometragem == null) ? 0 : quilometragem.hashCode());
-	result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
+
 	result = prime * result + ((valorPorLitro == null) ? 0 : valorPorLitro.hashCode());
 	return result;
 }
@@ -216,11 +206,7 @@ public boolean equals(Object obj) {
 		if (other.quilometragem != null)
 			return false;
 	} else if (!quilometragem.equals(other.quilometragem))
-		return false;
-	if (telefone == null) {
-		if (other.telefone != null)
-			return false;
-	} else if (!telefone.equals(other.telefone))
+	
 		return false;
 	if (valorPorLitro == null) {
 		if (other.valorPorLitro != null)
