@@ -26,8 +26,8 @@ public class Combustivel  implements Serializable{
 	 private Long id;
 	private static final long serialVersionUID = 1L;
 	
-
-
+@OneToMany(mappedBy = "combustivel")
+   private List <Abastecimento>  abastecimento;
 	
 	enum TCombustivel{
 		  GASOLINA, ETANOL, FLEX, GNV, DIESEL

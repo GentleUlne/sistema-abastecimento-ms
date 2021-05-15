@@ -37,14 +37,25 @@ public class  Veiculo implements Serializable {
   
   
 
-
+  @ManyToMany
   @ManyToOne (targetEntity = Modelo.class )
 
-
+	@JoinColumn(name =  "placa") 
   private String placa;
  
   
-	
+ 
+  
+@ManyToMany(mappedBy = "endereco")
+   private List <Lotacao>  lotacao;
+  
+  
+
+  
+  
+  
+	@OneToMany(mappedBy = "cpfMotorista")
+    private List <Abastecimento>  abastecimento;
 	
 
 	

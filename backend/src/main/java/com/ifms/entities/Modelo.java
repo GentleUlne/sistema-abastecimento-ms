@@ -25,11 +25,18 @@ public class  Modelo implements Serializable {
 	
 	 private Long id;
 	
-	  @ManyToOne (targetEntity = Marca.class)
+	 @ManyToOne (targetEntity = Marca.class)
 		@JoinColumn(name =  "descricao") 
 	  private String descricao;
 
-	 
+	  
+	 @OneToMany(mappedBy = "descricao")
+	   private List <Marca>  marca;
+	  
+	  
+	  @OneToMany(mappedBy = "placa")
+   private List <Veiculo>  veiculo;
+	//  
 	  
 
   public Modelo() {

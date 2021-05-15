@@ -24,13 +24,29 @@ public class  Lotacao implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
 	  private Long id;
-
+	 @ManyToOne (targetEntity = Cidade.class)
+		@JoinColumn(name =  "endereco")
 	  private String endereco;
-       private String descricao;
-     private String email;
-     private String site;
-    private String telefone;
-    public Lotacao() {
+	 
+	
+
+	
+	
+	
+	
+	
+	
+	 @OneToMany ( mappedBy   = "placa")
+	 private List <Veiculo>  veiculo;
+//	
+	
+	
+
+  private String descricao;
+  private String email;
+  private String site;
+  private String telefone;
+  public Lotacao() {
 
 }
 public Lotacao(Long id, String descricao, String endereco, String email, String site, String telefone) {

@@ -28,11 +28,19 @@ public class  Cidade implements Serializable {
 	 
 	
 
-
+	  
+	  
+	 @ManyToOne (targetEntity = Estado.class)
+	@JoinColumn(name =  "nome_cidade")
 	  private String nome;
 	  
 	  
 	  
+	  @OneToMany(mappedBy = "endereco")
+	    private List <AutoPosto>  autoposto;
+
+	 @OneToMany (mappedBy = "endereco")
+	  private List <Lotacao>  lotacao;
 	  
 	  
   public Cidade() {

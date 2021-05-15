@@ -2,11 +2,13 @@ package com.ifms.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 import javax.persistence.Table;
@@ -32,13 +34,16 @@ public class  Abastecimento implements Serializable {
 	
 	
 	
-
+	@Column(name = "data_do_abastecimento")
 	private String dataDoAbastecimento;
 	
-
-
+	@ManyToOne
+	@JoinColumn(name = "id_combustivel_fk")
 	private Combustivel combustivel;
-
+	
+	
+	@ManyToOne (targetEntity = Veiculo.class)
+	@JoinColumn(name = "cpf_Motorista")
 	private String cpfMotorista;
 	
 	

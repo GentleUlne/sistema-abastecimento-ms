@@ -26,6 +26,8 @@ public class  Estado implements Serializable {
 	 private Long id;
 	  private String UF;
 	  
+  @OneToMany(mappedBy = "nome")
+    private List <Cidade>  cidade; 
 	  
 	  
   public Estado() {

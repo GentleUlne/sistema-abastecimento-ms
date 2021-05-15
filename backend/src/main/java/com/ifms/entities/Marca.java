@@ -28,10 +28,17 @@ public class  Marca implements Serializable {
 	
 	 private Long id;
 
+  @ManyToOne  (targetEntity = Modelo.class)
+		@JoinColumn(name =  "descricao")
 	  private String descricao;
 	 
-	
-	
+	 @OneToMany(mappedBy = "placa") 
+	private List <Veiculo>  veiculo;
+	  
+	  
+	 @OneToMany(mappedBy = "descricao")
+	    private List <Modelo>  modelo;
+//	
   public Marca() {
 
 }

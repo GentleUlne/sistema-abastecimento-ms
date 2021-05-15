@@ -20,11 +20,12 @@ public class  Tipo implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
+
+
 	 private Long id;
 	  private String descricao;
-	  
-	
+		@OneToMany(mappedBy = "placa")
+	    private List <Veiculo>  veiculo;
   public Tipo() {
 
 }
